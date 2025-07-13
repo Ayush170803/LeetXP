@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const mediumdata=document.querySelector('#mediumdata');
     const harddata=document.querySelector('#harddata');
     const stats=document.querySelector('#stats');
+    const backendURL = "https://leet-xp.vercel.app";
 
     function validate(username) {
         if (username.trim()==="")
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function fetchUserData(username) {
         try {
-            const response=await fetch("http://localhost:3000/leetcode",{method:"POST",
+            const response=await fetch(`${backendURL}/leetcode`,{method:"POST",
                 headers:{
                     "Content-Type":"application/json",
                 },
